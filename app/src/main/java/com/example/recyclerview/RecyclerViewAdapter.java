@@ -30,9 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        TextView textView;
-        textView = holder.itemView.findViewById(R.id.itemTv);
-        textView.setText(list.get(position));
+        holder.itemText.setText(list.get(position));
     }
 
     @Override
@@ -41,9 +39,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-
+        TextView itemText;
         public ViewHolder(@NonNull @org.jetbrains.annotations.NotNull View itemView) {
             super(itemView);
+            itemText = itemView.findViewById(R.id.itemTv);
         }
     }
 }
