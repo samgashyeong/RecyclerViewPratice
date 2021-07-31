@@ -1,5 +1,6 @@
 package com.example.recyclerview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class ListViewAdapter extends BaseAdapter {
     List<String> list;
@@ -18,6 +21,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        Log.d(TAG, "getCount가 호출됨");
         return list.size();
     }
 
