@@ -36,7 +36,7 @@ public class ListViewAdapter extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.row_item, viewGroup, false);
         TextView itemText = itemView.findViewById(R.id.itemTv);
-        itemText.setText(i);
+        itemText.setText(list.get(i));
         return itemView;
     }
 }
