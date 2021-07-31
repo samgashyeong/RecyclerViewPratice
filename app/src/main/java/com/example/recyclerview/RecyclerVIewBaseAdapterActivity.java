@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerVIewBaseAdapterActivity extends AppCompatActivity {
     RecyclerView recyclerView;
+    Button btn;
 
     List<String> list = new ArrayList<>();
     @Override
@@ -19,6 +21,7 @@ public class RecyclerVIewBaseAdapterActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewBase);
 
+        btn = findViewById(R.id.button);
 
         list.clear();
         list.add("1");
@@ -26,6 +29,12 @@ public class RecyclerVIewBaseAdapterActivity extends AppCompatActivity {
         list.add("3");
 
 
-        recyclerView.setAdapter(new RecyclerViewAdapter(list));
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);
+        recyclerView.setAdapter(adapter);
+
+        btn.setOnClickListener(view -> {
+            list.add("추가된 아이템");
+            adapter.notifyItemInserted(list.size()-1);
+        });
     }
 }
