@@ -14,13 +14,11 @@ public class RecyclerViewListAdapterActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Button addBtn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_list_adapter);
-
-        addBtn = findViewById(R.id.addBtn);
+        addBtn = findViewById(R.id.editListBtn);
         recyclerView = findViewById(R.id.recyclerViewList);
 
 
@@ -28,8 +26,7 @@ public class RecyclerViewListAdapterActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         addBtn.setOnClickListener(view -> {
             List<String> list = new ArrayList<>();
-            list.clear();
-            for(int i =0; i<50;i++){
+            for(int i =0; i<20;i++){
                 int num = (int)(Math.random() * 100);
                 list.add(String.valueOf(num));
             }
